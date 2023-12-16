@@ -1,0 +1,53 @@
+.Policy {
+  @apply h-screen w-screen absolute top-0 left-0 p-10 flex justify-center items-center;
+  @apply bg-black/30;
+
+  .Container {
+    width: 600px;
+    @apply p-10 flex flex-col justify-center items-center;
+    @apply shadow rounded rounded-2xl;
+    @apply bg-white;
+
+    & > header {
+      @apply mb-5 font-bold text-lg;
+    }
+
+    & > main {
+      & > ul {
+        @apply my-3 list-disc list-inside break-all;
+      }
+    }
+
+    & > footer {
+      @apply w-full px-10 mt-5 flex flex-col justify-center items-center;
+
+      & > .confirm {
+        @apply flex flex-row items-center;
+
+        & > span {
+          @apply text-sm;
+        }
+      }
+
+      & > .buttons {
+        @apply mt-5 w-full flex flex-row select-none;
+
+        & > button {
+          @apply w-full rounded rounded-md p-2;
+        }
+
+        & > .open {
+          @apply bg-black text-white mr-6 flex-1;
+        }
+
+        & > .pending {
+          @apply bg-gray-100 text-black/30 mr-6 flex-1 pointer-events-none;
+        }
+
+        & > .exit {
+          @apply bg-gray-300 text-black flex-1;
+        }
+      }
+    }
+  }
+}
