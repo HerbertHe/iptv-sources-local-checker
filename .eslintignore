@@ -1,6 +1,4 @@
 node_modules
 dist
 out
-*.log*
-
-.vscode
+.gitignore
