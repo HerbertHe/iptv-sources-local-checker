@@ -7,7 +7,7 @@ Local checker for IPTV sources
 - [ ] Add support for local testing
 - [ ] Add support for quantitative indication
 - [ ] Add support for different remote sources testing
-- [ ] Add support for user sharing
+- [ ] Add support for user sharing plan
 - [ ] Add support for custom sources
 - [ ] Add support for local static service
 
