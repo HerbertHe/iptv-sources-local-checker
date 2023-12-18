@@ -1,10 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './assets/index.less'
-import App from './App'
+import React from "react"
+import ReactDOM from "react-dom/client"
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+import { ConfigProvider } from "antd"
+
+import "./assets/index.less"
+import App from "./App"
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <ConfigProvider
+      theme={{
+        token: {}
+      }}
+    >
+      <App />
+    </ConfigProvider>
   </React.StrictMode>
 )

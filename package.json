@@ -22,6 +22,7 @@
   "dependencies": {
     "@electron-toolkit/preload": "^2.0.0",
     "@electron-toolkit/utils": "^2.0.0",
+    "antd": "^5.12.3",
     "electron-updater": "^6.1.1",
     "iptv-checker": "^0.28.0",
     "systeminformation": "^5.21.20"

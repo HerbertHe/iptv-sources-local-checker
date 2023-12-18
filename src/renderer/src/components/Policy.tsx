@@ -1,6 +1,10 @@
 import { useState, FC } from "react"
 import "../assets/policy.less"
 
+import { Checkbox, Select } from "antd"
+
+import { ProvinceOptions, ISPOptions } from "../../../common"
+
 interface IPolicyProps {
   setPage: () => void
   setExit: () => void
@@ -56,13 +60,9 @@ export const PolicyConfirm: FC<IPolicyItemProps> = ({ setNext, setExit }) => {
       </main>
       <footer>
         <div className="confirm">
-          <input
-            type="checkbox"
-            onChange={(e) => {
-              setConfirm(e.target.checked)
-            }}
-          />
-          <span>我确认已阅读、理解并同意本软件协议</span>
+          <Checkbox onChange={(e) => setConfirm(e.target.checked)}>
+            我确认已阅读、理解并同意本软件协议
+          </Checkbox>
         </div>
         <div className="buttons">
           <button
@@ -106,50 +106,43 @@ export const PolicyPlan: FC<IPolicyItemProps> = ({ setNext, setExit }) => {
           <div className="InfoDesc">
             为了保证数据和软件使用的实际准确性，请您不要填写虚假的信息，并关闭本地网络代理服务，否则本软件可能无法有效工作。
           </div>
-          <form>
-            <div className="confirm">
-              <input
-                type="checkbox"
-                checked={!join}
-                onChange={(e) => {
-                  setJoin(!e.target.checked)
-                }}
-              />
-              <span>不参与共建计划</span>
-            </div>
-
-            <select
-              title="您的所在地区"
-              disabled={!join}
-              defaultValue={province}
-              value={province}
+          <div className="InfoJoin">
+            <Checkbox
               onChange={(e) => {
-                setProvince(e.target.value)
+                setJoin(!e.target.checked)
               }}
             >
-              <option value="">北京</option>
-              <option value="">上海</option>
-              <option value="outside">海外</option>
-            </select>
-            <select
+              不参与共建计划
+            </Checkbox>
+          </div>
+          <div className="InfoSelectGroup">
+            <Select
+              className="InfoSelect"
+              title="您所在的地区"
+              placeholder="您所在的地区"
+              disabled={!join}
+              options={ProvinceOptions}
+              value={province}
+              onChange={(val) => {
+                setProvince(val)
+              }}
+            />
+
+            <Select
+              className="InfoSelect"
               title="您的网络运营商"
-              defaultValue={province === "outside" ? "other" : idc}
               value={province === "outside" ? "other" : idc}
               disabled={!join || province === "outside"}
-              onChange={(e) => {
+              options={ISPOptions}
+              onChange={(val) => {
                 if (province === "outside") {
                   setIdc("other")
                 } else {
-                  setIdc(e.target.value)
+                  setIdc(val)
                 }
               }}
-            >
-              <option value="">中国电信</option>
-              <option value="">中国移动</option>
-              <option value="">中国联通</option>
-              <option value="other">其他</option>
-            </select>
-          </form>
+            />
+          </div>
         </div>
       </main>
       <footer>

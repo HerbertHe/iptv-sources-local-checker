@@ -16,6 +16,14 @@
       & > ul {
         @apply my-3 list-disc list-inside break-all;
       }
+
+      .InfoSelectGroup {
+        @apply w-full flex flex-row justify-center items-center;
+
+        & > .InfoSelect {
+          @apply flex-1 mx-1;
+        }
+      }
     }
 
     & > footer {
@@ -23,10 +31,6 @@
 
       & > .confirm {
         @apply flex flex-row items-center;
-
-        & > span {
-          @apply text-sm;
-        }
       }
 
       & > .buttons {
