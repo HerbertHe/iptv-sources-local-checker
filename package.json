@@ -23,7 +23,8 @@
     "@electron-toolkit/preload": "^2.0.0",
     "@electron-toolkit/utils": "^2.0.0",
     "electron-updater": "^6.1.1",
-    "iptv-checker": "^0.28.0"
+    "iptv-checker": "^0.28.0",
+    "systeminformation": "^5.21.20"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^1.0.1",
