@@ -6,7 +6,10 @@ interface IQuantitativeIndicatorResult {
   // ipv6
 }
 
-// TODO 测试可用率，ipv6覆盖率
+/**
+ * M3U 可用性指标评估
+ * @returns
+ */
 export const quantitative_indicator = (): IQuantitativeIndicatorResult => {
   return {
     total: 0,

@@ -24,7 +24,7 @@ const Test: FC = () => {
 
   return (
     <div className="Test">
-      <header>M3U源本地测试</header>
+      <header>M3U源本地评估</header>
       <Tabs className="TestContainer" tabPosition="top" items={tabs} />
     </div>
   )
@@ -58,8 +58,8 @@ const TestIBert: FC = () => {
               }
             })}
           />
-          <Button>测速</Button>
-          {/* TODO 在下面展示测速结果 */}
+          <Button>本地评估</Button>
+          {/* TODO 在下面展示本地评估结果 */}
         </>
       )}
     </div>
@@ -70,7 +70,7 @@ const TestOthers: FC = () => {
   return (
     <div>
       <Input placeholder="请输入m3u地址" />
-      <Button>测速</Button>
+      <Button>本地评估</Button>
     </div>
   )
 }

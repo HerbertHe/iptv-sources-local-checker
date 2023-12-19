@@ -15,7 +15,7 @@ const tabs = [
     children: <Home />
   },
   {
-    label: "测速",
+    label: "评估",
     key: "test",
     children: <Test />
   },
