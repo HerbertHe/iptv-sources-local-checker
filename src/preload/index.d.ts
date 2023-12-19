@@ -6,7 +6,7 @@ export interface IAPI {
   updateConfig: (joinPlan?: boolean, province?: TProvince, isp?: TISP) => Promise<void>
   getConfig: () => Promise<IConfig | undefined>
 
-  getChannels: () => Promise<Response>
+  getChannels: () => Promise<[number, string]>
 }
 
 declare global {

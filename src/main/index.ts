@@ -63,6 +63,7 @@ app.whenReady().then(() => {
   ipcMain.handle("config:update_config", ipc_update_config_handler)
   ipcMain.handle("config:get_config", ipc_get_config_handler)
 
+  // Channels IPC
   ipcMain.handle("channels:get_channels", ipc_get_channels_handler)
 
   createWindow()

@@ -14,7 +14,7 @@ const api: IAPI = {
     ipcRenderer.invoke("config:update_config", joinPlan, province, isp) as Promise<void>,
   getConfig: () => ipcRenderer.invoke("config:get_config") as Promise<IConfig | undefined>,
 
-  getChannels: () => ipcRenderer.invoke("channels:get_channels") as Promise<Response>
+  getChannels: async () => (await ipcRenderer.invoke("channels:get_channels")) as Promise<[number, string]>
 }
 
 // Use `contextBridge` APIs to expose Electron APIs to
