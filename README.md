@@ -11,6 +11,10 @@ Local checker for IPTV sources
 - [ ] Add support for custom sources
 - [ ] Add support for local static service
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=HerbertHe/iptv-sources-local-checker&type=Date)](https://star-history.com/#HerbertHe/iptv-sources-local-checker&Date)
+
 ## Thanks
 
 - [electron-vite](https://github.com/alex8088/electron-vite)
