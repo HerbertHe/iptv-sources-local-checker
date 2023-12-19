@@ -88,7 +88,7 @@ export const PolicyConfirm: FC<IPolicyItemProps> = ({ setNext, setExit }) => {
 export const PolicyPlan: FC<IPolicyItemProps> = ({ setNext, setExit }) => {
   const [join, setJoin] = useState(true)
   const [province, setProvince] = useState("")
-  const [idc, setIdc] = useState("")
+  const [isp, setISP] = useState("")
 
   return (
     <>
@@ -131,14 +131,14 @@ export const PolicyPlan: FC<IPolicyItemProps> = ({ setNext, setExit }) => {
             <Select
               className="InfoSelect"
               title="您的网络运营商"
-              value={province === "outside" ? "other" : idc}
+              value={province === "outside" ? "other" : isp}
               disabled={!join || province === "outside"}
               options={ISPOptions}
               onChange={(val) => {
                 if (province === "outside") {
-                  setIdc("other")
+                  setISP("other")
                 } else {
-                  setIdc(val)
+                  setISP(val)
                 }
               }}
             />

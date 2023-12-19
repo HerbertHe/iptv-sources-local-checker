@@ -35,6 +35,7 @@ export type TProvince =
 export type TISP = "chinatelecom" | "cmcc" | "chinaunicom" | "cbn" | "other" | ""
 
 export interface IConfig {
+  joinPlan: boolean
   province: TProvince
   isp: TISP
 }

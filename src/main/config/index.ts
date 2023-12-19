@@ -42,12 +42,13 @@ export const isConfigExisted = (): boolean => {
  * @param province
  * @param isp
  */
-export const initConfig = (province?: TProvince, isp?: TISP): void => {
+export const initConfig = (joinPlan?: boolean, province?: TProvince, isp?: TISP): void => {
   if (!fs.existsSync(CONFIG_DIR_PATH)) {
     fs.mkdirSync(CONFIG_DIR_PATH)
   }
 
   const config: IConfig = {
+    joinPlan: joinPlan ?? false,
     province: province ?? "",
     isp: isp ?? ""
   }
@@ -61,15 +62,16 @@ export const initConfig = (province?: TProvince, isp?: TISP): void => {
  * @param isp
  * @returns
  */
-export const updateConfig = (province?: TProvince, isp?: TISP): void => {
+export const updateConfig = (joinPlan?: boolean, province?: TProvince, isp?: TISP): void => {
   if (!fs.existsSync(CONFIG_PATH)) {
-    initConfig(province, isp)
+    initConfig(joinPlan, province, isp)
     return
   }
 
   const config_before = JSON.parse(fs.readFileSync(CONFIG_PATH).toString()) as IConfig
 
   const config: IConfig = {
+    joinPlan: joinPlan ?? config_before.joinPlan,
     province: province ?? config_before.province,
     isp: isp ?? config_before.isp
   }

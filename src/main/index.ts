@@ -3,7 +3,13 @@ import { join } from "path"
 import { electronApp, optimizer, is } from "@electron-toolkit/utils"
 import icon from "../../resources/icon.png?asset"
 
-import { ipc_is_config_existed_handler } from "./ipcs"
+import {
+  ipc_is_config_existed_handler,
+  ipc_init_config_handler,
+  ipc_update_config_handler,
+  ipc_get_config_handler,
+  ipc_get_channels_handler
+} from "./ipcs"
 
 function createWindow(): void {
   // Create the browser window.
@@ -51,7 +57,13 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window)
   })
 
+  // Config IPC
   ipcMain.handle("config:is_config_existed", ipc_is_config_existed_handler)
+  ipcMain.handle("config:init_config", ipc_init_config_handler)
+  ipcMain.handle("config:update_config", ipc_update_config_handler)
+  ipcMain.handle("config:get_config", ipc_get_config_handler)
+
+  ipcMain.handle("channels:get_channels", ipc_get_channels_handler)
 
   createWindow()
 

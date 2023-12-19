@@ -4,7 +4,7 @@ import Policy from "./components/Policy"
 import Pannel from "./components/Pannel"
 
 const App: FC = () => {
-  const [page, setPage] = useState("policy")
+  const [page, setPage] = useState("pannel")
   useEffect(() => {
     window.api.isConfigExisted().then((res: boolean) => {
       setPage(res ? "pannel" : "policy")
@@ -19,8 +19,7 @@ const App: FC = () => {
           setExit={() => {}}
           setPage={() => {
             setPage("pannel")
-            // 进入软件，生成本地配置文件 province, isp
-            // 要在本地 call
+            window.api.initConfig()
           }}
         />
       )}
