@@ -14,6 +14,11 @@ const Test: FC = () => {
       label: "其他 M3U 服务",
       key: "others",
       children: <TestOthers />
+    },
+    {
+      label: "本地 M3U 文件",
+      key: "local",
+      children: <TestLocal />
     }
   ]
 
@@ -68,6 +73,10 @@ const TestOthers: FC = () => {
       <Button>测速</Button>
     </div>
   )
+}
+
+const TestLocal: FC = () => {
+  return <div>本地测试文件</div>
 }
 
 export default Test

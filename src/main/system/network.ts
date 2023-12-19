@@ -1,6 +1,7 @@
-import { networkInterface } from "systeminformation"
+import { networkInterfaces } from "systeminformation"
 
-// TODO 本地网络情况数据
-const getNetworkInformation = () => {
+import type { TNetwork } from "../../common"
 
+export const getNetworkInformation = async (): Promise<TNetwork> => {
+  return await networkInterfaces()
 }

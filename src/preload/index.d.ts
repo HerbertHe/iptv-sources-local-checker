@@ -1,4 +1,5 @@
 import { ElectronAPI } from "@electron-toolkit/preload"
+import { TNetwork } from "src/common"
 
 export interface IAPI {
   isConfigExisted: () => Promise<boolean>
@@ -7,6 +8,7 @@ export interface IAPI {
   getConfig: () => Promise<IConfig | undefined>
 
   getChannels: () => Promise<[number, string]>
+  getNetworkInfo: () => Promise<TNetwork>
 }
 
 declare global {

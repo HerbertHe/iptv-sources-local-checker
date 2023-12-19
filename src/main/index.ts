@@ -8,7 +8,8 @@ import {
   ipc_init_config_handler,
   ipc_update_config_handler,
   ipc_get_config_handler,
-  ipc_get_channels_handler
+  ipc_get_channels_handler,
+  ipc_get_network_information_handler
 } from "./ipcs"
 
 function createWindow(): void {
@@ -65,6 +66,9 @@ app.whenReady().then(() => {
 
   // Channels IPC
   ipcMain.handle("channels:get_channels", ipc_get_channels_handler)
+
+  // system ipc
+  ipcMain.handle("system:get_network_info", ipc_get_network_information_handler)
 
   createWindow()
 

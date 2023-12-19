@@ -3,7 +3,7 @@ import { electronAPI } from "@electron-toolkit/preload"
 
 import type { IAPI } from "./index.d"
 
-import type { TProvince, TISP, IConfig } from "../common"
+import type { TProvince, TISP, IConfig, TNetwork } from "../common"
 
 // Custom APIs for renderer
 const api: IAPI = {
@@ -14,7 +14,11 @@ const api: IAPI = {
     ipcRenderer.invoke("config:update_config", joinPlan, province, isp) as Promise<void>,
   getConfig: () => ipcRenderer.invoke("config:get_config") as Promise<IConfig | undefined>,
 
-  getChannels: async () => (await ipcRenderer.invoke("channels:get_channels")) as Promise<[number, string]>
+  getChannels: async () =>
+    (await ipcRenderer.invoke("channels:get_channels")) as Promise<[number, string]>,
+
+  getNetworkInfo: async () =>
+    (await ipcRenderer.invoke("system:get_network_info")) as Promise<TNetwork>
 }
 
 // Use `contextBridge` APIs to expose Electron APIs to

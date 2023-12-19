@@ -10,7 +10,7 @@ import Test from "./Test"
 
 const tabs = [
   {
-    label: "首页",
+    label: "概览",
     key: "home",
     children: <Home />
   },
