@@ -4,12 +4,13 @@ import { IDNSInfo, IObject } from "."
  * 单个链接检查情况
  */
 export interface IURLTestResult {
-  url: string
-  protocol: string
-  ssl: boolean
-  ipv6: boolean
-  dns: IDNSInfo
-  response_full_time: bigint
+  url: string // 链接
+  protocol: string // 协议
+  ssl: boolean // 加密情况
+  ipv6: boolean // 支持 ipv6
+  dns: IDNSInfo // dns 信息
+  response_full_time: bigint // 完成响应时间
+  disable: boolean // 可用状态
 }
 
 /**
