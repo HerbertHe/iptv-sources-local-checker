@@ -10,6 +10,7 @@ Local checker for IPTV sources
 - [ ] Add support for user sharing plan
 - [ ] Add support for custom sources
 - [ ] Add support for local static service
+- [ ] Add support for catch network packages with [whistle](https://github.com/avwo/whistle)
 
 ## Star History
 
